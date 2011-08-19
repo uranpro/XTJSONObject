@@ -16,9 +16,7 @@ NSStringEncoding const XTJSONObjectDefaultEncoding = NSUTF8StringEncoding;
 - (id)initWithJSONDict:(NSDictionary *)d {
     self = [super init];
     if (self) {
-        @throw [NSException exceptionWithName:[NSString stringWithFormat:@"(%@)XTJSONObject->initWithJSONDict", [self class]]
-                                       reason:@"Not implemented"
-                                     userInfo:nil];
+        //
     }
     return self;
 }
