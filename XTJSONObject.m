@@ -61,8 +61,8 @@ NSStringEncoding const XTJSONObjectDefaultEncoding = NSUTF8StringEncoding;
 }
 
 + (NSArray *)objectsFromJSONArrayData:(NSData *)data withEncoding:(NSStringEncoding)encoding {
-    return [self objectFromJSONString:[[[NSString alloc] initWithData:data
-                                                             encoding:encoding] autorelease]];
+    return [self objectsFromJSONArrayString:[[[NSString alloc] initWithData:data
+                                                                   encoding:encoding] autorelease]];
 }
 
 + (NSArray *)objectsFromJSONArrayData:(NSData *)data {
