@@ -13,22 +13,23 @@ extern NSStringEncoding const XTJSONObjectDefaultEncoding;
 @interface XTJSONObject : NSObject
 
 // Init methods
+// Main init method
 - (id)initWithJSONDict:(NSDictionary *)d;
 
-- (id)initWithJSONString:(NSString *)str; // Dont override
-- (id)initWithJSONData:(NSData *)data; // Dont override
-- (id)initWithJSONData:(NSData *)data withEncoding:(NSStringEncoding)encoding; // Dont override
+- (id)initWithJSONString:(NSString *)str;
+- (id)initWithJSONData:(NSData *)data;
+- (id)initWithJSONData:(NSData *)data withEncoding:(NSStringEncoding)encoding;
 
 // Factory methods
 + (id)object;
-+ (id)objectFromJSONDict:(NSDictionary *)d; // Dont override
-+ (id)objectFromJSONString:(NSString *)str; // Dont override
-+ (id)objectFromJSONData:(NSData *)data withEncoding:(NSStringEncoding)encoding; // Dont override
-+ (id)objectFromJSONData:(NSData *)data; // Dont override
++ (id)objectFromJSONDict:(NSDictionary *)d;
++ (id)objectFromJSONString:(NSString *)str;
++ (id)objectFromJSONData:(NSData *)data withEncoding:(NSStringEncoding)encoding;
++ (id)objectFromJSONData:(NSData *)data;
 
-+ (NSArray *)objectsFromJSONArrayString:(NSString *)str; // Dont override
-+ (NSArray *)objectsFromJSONArrayDict:(NSDictionary *)d; // Dont override
-+ (NSArray *)objectsFromJSONArrayData:(NSData *)data; // Dont override
-+ (NSArray *)objectsFromJSONArrayData:(NSData *)data withEncoding:(NSStringEncoding)encoding; // Dont override
++ (NSArray *)objectsFromJSONArrayString:(NSString *)str;
++ (NSArray *)objectsFromJSONArrayDict:(NSDictionary *)d;
++ (NSArray *)objectsFromJSONArrayData:(NSData *)data;
++ (NSArray *)objectsFromJSONArrayData:(NSData *)data withEncoding:(NSStringEncoding)encoding;
 
 @end

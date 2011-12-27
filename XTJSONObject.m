@@ -34,16 +34,15 @@ NSStringEncoding const XTJSONObjectDefaultEncoding = NSUTF8StringEncoding;
     return [self initWithJSONDict:[str JSONValue]];
 }
 
-- (void)dealloc {
-    [super dealloc];
-}
+#pragma mark - Factory methods
 
 + (id)object {
     return [[[self alloc] init] autorelease];
 }
 
 + (id)objectFromJSONData:(NSData *)data withEncoding:(NSStringEncoding) encoding {
-    return [self objectFromJSONString:[[[NSString alloc] initWithData:data encoding:encoding] autorelease]];
+    return [self objectFromJSONString:[[[NSString alloc] initWithData:data
+                                                             encoding:encoding] autorelease]];
 }
 
 + (id)objectFromJSONData:(NSData *)data {
@@ -56,8 +55,7 @@ NSStringEncoding const XTJSONObjectDefaultEncoding = NSUTF8StringEncoding;
 }
 
 + (id)objectFromJSONDict:(NSDictionary *)d {
-    id obj = [[self alloc] initWithJSONDict:d];
-    return [obj autorelease];
+    return [[[self alloc] initWithJSONDict:d] autorelease];
 }
 
 + (NSArray *)objectsFromJSONArrayData:(NSData *)data withEncoding:(NSStringEncoding)encoding {
@@ -77,9 +75,8 @@ NSStringEncoding const XTJSONObjectDefaultEncoding = NSUTF8StringEncoding;
 + (NSArray *)objectsFromJSONArrayDict:(NSDictionary *)d {
     NSMutableArray *tmp = [NSMutableArray array];
     
-    for (id i in d) {
+    for (id i in d)
         [tmp addObject:[self objectFromJSONDict:i]];
-    }
     
     return tmp;
 }
